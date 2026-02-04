@@ -103,8 +103,8 @@ export default function ARPage() {
                   </label>
                   <input id="customer-phone" className="form-control" {...register('phone')} />
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Guardando...' : 'Crear cliente'}
+                <button type="submit" className="btn btn-primary" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Guardando...' : 'Crear cliente'}
                 </button>
               </form>
             </div>
@@ -179,3 +179,4 @@ export default function ARPage() {
     </section>
   );
 }
+

@@ -139,8 +139,8 @@ export default function BillingPage() {
                     <input id="discount-total" type="number" step="0.01" className="form-control" {...register('discount_total', { valueAsNumber: true })} />
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary mt-3" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Registrando...' : 'Emitir factura'}
+                <button type="submit" className="btn btn-primary mt-3" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Registrando...' : 'Emitir factura'}
                 </button>
               </form>
             </div>
@@ -187,3 +187,4 @@ export default function BillingPage() {
     </section>
   );
 }
+

@@ -32,7 +32,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!organizationId) return;
-    supabaseBrowser.rpc('fn_enqueue_overdue_alerts').catch(() => {});
+    void supabaseBrowser.rpc('fn_enqueue_overdue_alerts');
   }, [organizationId]);
 
   return (

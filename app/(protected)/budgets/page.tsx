@@ -140,8 +140,8 @@ export default function BudgetsPage() {
                   </label>
                   <input id="planned_amount" type="number" step="0.01" className="form-control" {...register('planned_amount', { valueAsNumber: true })} />
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Guardando...' : 'Agregar línea'}
+                <button type="submit" className="btn btn-primary" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Guardando...' : 'Agregar línea'}
                 </button>
               </form>
             </div>
@@ -188,3 +188,4 @@ export default function BudgetsPage() {
     </section>
   );
 }
+

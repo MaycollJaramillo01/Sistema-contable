@@ -104,8 +104,8 @@ export default function IncomesPage() {
                   </label>
                   <textarea id="income-description" className="form-control" rows={3} {...register('description')} />
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Guardando ingreso...' : 'Registrar ingreso'}
+                <button type="submit" className="btn btn-primary" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Guardando ingreso...' : 'Registrar ingreso'}
                 </button>
               </form>
             </div>
@@ -135,3 +135,4 @@ export default function IncomesPage() {
     </section>
   );
 }
+

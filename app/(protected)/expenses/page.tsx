@@ -112,8 +112,8 @@ export default function ExpensesPage() {
                     Requiere aprobación prioritaria
                   </label>
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Guardando...' : 'Registrar gasto'}
+                <button type="submit" className="btn btn-primary" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Guardando...' : 'Registrar gasto'}
                 </button>
               </form>
             </div>
@@ -148,6 +148,7 @@ export default function ExpensesPage() {
     </section>
   );
 }
+
 
 
 

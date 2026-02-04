@@ -92,7 +92,7 @@ export default function SecurityPage() {
               </select>
             </div>
             <div className="col-md-2 d-flex align-items-end">
-              <button type="submit" className="btn btn-primary w-100" disabled={mutation.isLoading}>
+              <button type="submit" className="btn btn-primary w-100" disabled={mutation.isPending}>
                 Guardar
               </button>
             </div>
@@ -115,8 +115,8 @@ export default function SecurityPage() {
               <tbody>
                 {userRolesQuery.data?.map((item) => (
                   <tr key={item.user_id}>
-                    <td>{item.profiles?.full_name ?? item.user_id}</td>
-                    <td>{item.profiles?.email}</td>
+                    <td>{item.profiles?.[0]?.full_name ?? item.user_id}</td>
+                    <td>{item.profiles?.[0]?.email}</td>
                     <td>{item.role_id}</td>
                   </tr>
                 ))}
@@ -133,3 +133,4 @@ export default function SecurityPage() {
     </section>
   );
 }
+

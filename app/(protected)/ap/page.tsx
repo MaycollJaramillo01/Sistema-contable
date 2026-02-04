@@ -97,8 +97,8 @@ export default function APPage() {
                   </label>
                   <input id="vendor-phone" className="form-control" {...register('phone')} />
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Guardando...' : 'Guardar proveedor'}
+                <button type="submit" className="btn btn-primary" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Guardando...' : 'Guardar proveedor'}
                 </button>
               </form>
             </div>
@@ -173,3 +173,4 @@ export default function APPage() {
     </section>
   );
 }
+

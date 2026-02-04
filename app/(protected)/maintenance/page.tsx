@@ -98,8 +98,8 @@ export default function MaintenancePage() {
                     <option value="tax_rates">Impuestos</option>
                   </select>
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={mutation.isLoading}>
-                  {mutation.isLoading ? 'Guardando...' : 'Agregar ítem'}
+                <button type="submit" className="btn btn-primary" disabled={mutation.isPending}>
+                  {mutation.isPending ? 'Guardando...' : 'Agregar ítem'}
                 </button>
               </form>
             </div>
@@ -135,3 +135,4 @@ export default function MaintenancePage() {
     </section>
   );
 }
+
